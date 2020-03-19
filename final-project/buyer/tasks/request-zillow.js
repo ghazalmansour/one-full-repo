@@ -14,30 +14,21 @@ const baseURL = 'https://my-json-server.typicode.com/ghazalmansour/mockjson/prop
   console.log(homes.length);
 
   //filtering to < $1000000
-  const lessHomes = homes.filter(home => {
+ /* const lessHomes = homes.filter(home => {
     //return home.price > 1000000;
   //});
   if (
-    home.price > 1000000
+    home.size > 2000
   ) {
     return false 
   }
-  return true 
-}); 
-      /*const homePrice = home.price.toString().toLowerCase();
-      // algo logic
-      if (
-          homePrice.home > 1000000
-      ); {
-          return false
-      }
-      return true;
-  })*/
+  return true
+}; 
 
-  console.log('filtered down to', lessHomes.length);
+console.log('filtered down to', lessHomes.length);*/
 
   // redis 
-  const success = await setAsync('zillow', JSON.stringify(lessHomes));
+  const success = await setAsync('zillow', JSON.stringify(homes));
   console.log({success});
 }
 module.exports();
