@@ -12,7 +12,7 @@ const getAsync = promisify(client.get).bind(client);
 app.get('/homes', async (req, res) => {
 
     const homes = await getAsync('zillow');
-    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Origin", process.env.REDIS_URL || "http://localhost:3000");
     return res.send(homes)
 })
 // heroku step3 
