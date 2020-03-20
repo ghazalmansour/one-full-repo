@@ -4,7 +4,7 @@ const path = require('path')
 const port = process.env.PORT || 3003; //heroku step1 
 
 var redis = require("redis"),
-    client = redis.createClient(process.env.REDIS_URL); //heroku step 2 
+    client = redis.createClient()//); //heroku step 2 
 
 const {promisify} = require('util');
 const getAsync = promisify(client.get).bind(client);
